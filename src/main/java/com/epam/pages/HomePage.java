@@ -1,6 +1,5 @@
 package com.epam.pages;
 
-import com.epam.BasePage;
 import com.epam.utils.TestProperties;
 
 /**

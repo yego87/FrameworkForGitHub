@@ -1,4 +1,4 @@
-package com.epam;
+package com.epam.pages;
 
 import com.epam.utils.BaseDriver;
 import org.openqa.selenium.WebDriver;

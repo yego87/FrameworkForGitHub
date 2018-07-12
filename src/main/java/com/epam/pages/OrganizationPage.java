@@ -1,11 +1,9 @@
 package com.epam.pages;
 
-import com.epam.BasePage;
 import com.epam.utils.TestProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Describe web page were user can create own organization

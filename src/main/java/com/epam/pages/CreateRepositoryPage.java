@@ -1,6 +1,5 @@
 package com.epam.pages;
 
-import com.epam.BasePage;
 import com.epam.utils.TestProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
