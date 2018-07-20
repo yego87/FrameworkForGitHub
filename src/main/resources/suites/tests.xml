@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GitHub suite">
+    <test verbose="1" name="GitHub Test" annotations="JDK">
+        <classes>
+            <class name="com.epam.github.tests.GitHubTest" />
+        </classes>
+    </test>
+</suite>

@@ -1,8 +1,10 @@
 package com.epam.github.tests;
 
+import com.epam.github.framework.core.ui.pages.*;
 import com.epam.github.framework.data.UserData;
+import com.epam.github.framework.reports.TestListners;
+import com.epam.github.framework.reports.TestLogger;
 import com.epam.github.framework.utils.BaseDriver;
-import com.epam.github.tests.github.page.*;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -10,6 +12,7 @@ import org.testng.annotations.*;
 /**
  * This test case contain different tests for GitHub fiches
  */
+@Listeners(TestListners.class)
 public class GitHubTest extends BasicTestCase {
 
     //need to create random data in tests
@@ -53,6 +56,7 @@ public class GitHubTest extends BasicTestCase {
         homePage.enterProfile();
         profilePage.editName(fakeText);
 
+        TestLogger.info("Assert that profile was edit");
         Assert.assertTrue(profilePage.isProfileEdit(fakeText));
     }
 

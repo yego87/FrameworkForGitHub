@@ -16,5 +16,4 @@ public abstract class BasicTestCase {
     public void setUpBeforeClass() throws Exception {
     }
 
-
 }
