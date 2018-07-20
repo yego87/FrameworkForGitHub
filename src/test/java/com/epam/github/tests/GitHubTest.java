@@ -2,6 +2,7 @@ package com.epam.github.tests;
 
 import com.epam.github.framework.core.ui.pages.*;
 import com.epam.github.framework.data.UserData;
+import com.epam.github.framework.reports.ReportListener;
 import com.epam.github.framework.reports.TestListners;
 import com.epam.github.framework.reports.TestLogger;
 import com.epam.github.framework.utils.BaseDriver;
@@ -12,7 +13,7 @@ import org.testng.annotations.*;
 /**
  * This test case contain different tests for GitHub fiches
  */
-@Listeners(TestListners.class)
+@Listeners({TestListners.class, ReportListener.class})
 public class GitHubTest extends BasicTestCase {
 
     //need to create random data in tests
