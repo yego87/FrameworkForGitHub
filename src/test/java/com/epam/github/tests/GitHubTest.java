@@ -99,7 +99,7 @@ public class GitHubTest extends BasicTestCase {
             priority = 5
     )
     public void checkUserCanCommentGist() {
-
+        gistPage.open();
         gistPage.addComment(fakeText);
 
         Assert.assertTrue(gistPage.isCommentAdded(fakeText));
@@ -111,7 +111,7 @@ public class GitHubTest extends BasicTestCase {
     )
     public void checkCommitInRepo() {
         repositoryPage.open();
-        repositoryPage.openItem("src");
+        repositoryPage.openItem(0);
 
         Assert.assertNotNull(repositoryPage.getItemLastCommit());
     }

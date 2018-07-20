@@ -18,8 +18,9 @@ public class RepositoryPage extends BasePage {
      */
 	@FindBy(xpath = "//strong[@itemprop='name']/a")
 	private WebElement repositoryNameLink;
-    @FindBy(xpath = "//tr//span/a[contains(text(), '')]")
-    private List<FileElement> file;
+    @FindBy(xpath = "//table[contains(@class,'files js-navigation-container js-active-navigation-container')]/tbody/tr[@class='js-navigation-item']//td[2]//span/a[contains(@href, '')]")
+            // "//table[contains()@class,'js-navigation-container')]/tbody[2]/tr[@class='js-navigation-item']tr//span/a[contains(text(), '')]")
+    private List<FileElement> files;
 
     public RepositoryPage() {
         PageFactory.initElements(new Decorator(driver), this);
@@ -32,12 +33,18 @@ public class RepositoryPage extends BasePage {
         driver.get(TestProperties.getTestProperty("repository.url"));
     }
 
-    public void openItem(String fileName) {
-        //file..selectItem(fileName);
+    public int getFilesCount(){
+        return files.size();
+    }
+
+    public void openItem(int index) {
+        files.get(index).click();
+
+        //file.selectItem(fileName);
     }
 
     public String getItemLastCommit() {
-        return "";//return file.getTimeOfCommit();
+        return "";
     }
 
     /**

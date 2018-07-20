@@ -1,19 +1,24 @@
 package com.epam.github.framework.core.ui.elements;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class FileElement extends Element {
+
+    @FindBy(xpath = "//span/relative-time")
+    private WebElement commit;
+//    @FindBy(xpath = ".//div[@id='last-commit']")
+//    private WebElement itemElement;
 
     public FileElement(WebElement webElement) {
         super(webElement);
     }
 
     public void selectItem(String itemName) {
-        webElement.findElement(By.xpath("//tr//span/a[contains(text(), '" + itemName + "')]")).click();
+        //itemElement.click();
     }
 
     public String getTimeOfCommit() {
-        return webElement.findElement(By.xpath("//div//relative-time")).getText();
+        return commit.getText();
     }
 }
