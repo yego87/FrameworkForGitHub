@@ -3,18 +3,16 @@ package com.epam.github.tests;
 import java.util.concurrent.TimeUnit;
 
 import com.epam.github.framework.core.ui.driver.Driver;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
 
 import cucumber.api.CucumberOptions;
+import org.testng.annotations.BeforeTest;
 
 @CucumberOptions(strict = true, plugin = { "json:target/cucumber-report.json",
-        "html:target/cucumber-report" }, tags = "@smokeTest", features = "cucumber_features/github_basic.feature", glue = {
-        "com.epam.github.tests.bdd.steps.GitHubLoginSteps" })
+        "html:target/cucumber-report" }, tags = "@smokeTest", features = "src/test/resources/cucumber_features/github_basic.feature", glue = {
+        "com.epam.github.tests.cucumber.steps.GitHubLoginSteps" })
 public class GitHubBddLoginTest extends AbstractTestNGCucumberTests {
 
     private static WebDriver driver;
@@ -27,7 +25,7 @@ public class GitHubBddLoginTest extends AbstractTestNGCucumberTests {
         }
     }
 
-    @Before
+    @BeforeTest
     public void startBrowser() {
         // set a certain implicit wait timeout
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -35,7 +33,7 @@ public class GitHubBddLoginTest extends AbstractTestNGCucumberTests {
         driver.manage().window().maximize();
     }
 
-    @After
+    @AfterTest
     public void stopBrowser() {
         driver.quit();
     }

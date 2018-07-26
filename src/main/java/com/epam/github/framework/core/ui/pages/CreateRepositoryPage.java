@@ -16,6 +16,8 @@ public class CreateRepositoryPage extends BasePage {
      */
     @FindBy(id = "repository_name")
     private WebElement fieldName;
+    @FindBy (xpath = "//div[@id='your_repos']//h3[contains(.,'Your repositories')]")
+    private WebElement yourRepositoriesLabel;
     @FindBy(xpath = "//form[@id='new_repository']//button[@type='submit']")
     private WebElement buttonCreateRepo;
 
@@ -40,6 +42,11 @@ public class CreateRepositoryPage extends BasePage {
                 .click();
 
         return repositoryPage;
+    }
+
+    public boolean loginIsCorrect() {
+        return yourRepositoriesLabel.isDisplayed();
+
     }
 
     public String getText() {
