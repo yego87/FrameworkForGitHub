@@ -1,6 +1,5 @@
 package com.epam.github.framework.core.runner;
 
-import java.io.File;
 import java.util.List;
 
 import com.epam.github.framework.common.config.Settings;
@@ -24,8 +23,8 @@ public class Runner {
 	public static void main(String[] args) {
 		try {
 			new Runner(args).run();
-		} catch (Exception exc) {
-			exc.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -34,8 +33,8 @@ public class Runner {
 		CmdLineParser parser = new CmdLineParser(settings);
 		try {
 			parser.parseArgument(args);
-			TestNgConfig.addTestngConfig(settings.pathToTestng);
-			Driver.setDefaultWebDriverType(WebDriverTypes.valueOf(settings.driver));
+			TestNgConfig.addTestngConfig(System.getenv("suite"));
+			Driver.setDefaultWebDriverType(WebDriverTypes.valueOf(System.getenv("driver")));
 
 		} catch (CmdLineException e) {
 			parser.printUsage(System.out);

@@ -18,7 +18,7 @@ public class TestProperties {
 		try {
 			TEST_PROPERTIES.load(testUrl.openStream());
 		} catch (IOException e) {
-			e.printStackTrace();
+		    e.printStackTrace();
 		}
 	}
 

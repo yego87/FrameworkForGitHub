@@ -32,20 +32,25 @@ public class Driver {
 				break;
 			}
 			case IE: {
-				System.setProperty("webdriver.ie.driver", "src/test/resources/driverbinaries/IEDriverServer.exe");
+				System.setProperty("webdriver.ie.driver", "");
 				driver = new InternetExplorerDriver();
 				break;
 			}
 			case CHROME: {
-				System.setProperty("webdriver.chrome.driver", "src/main/resources/webdriverbinaries/chromedriver.exe");
-				driver = new ChromeDriver();//D:\projects\FrameworkForGitHub\src\main\resources\webdriverbinaries\chromedriver.exe
+				System.setProperty("webdriver.chrome.driver",  "D:\\drivers\\chromedriver.exe");
+				driver = new ChromeDriver();
 				break;
 			}
 			default:
 				throw new UnknownDriverTypeException("Unknown web driver specified: " + type);
 			}
-            driver.manage().timeouts().implicitlyWait(TestProperties.getWaitTime(), TimeUnit.SECONDS);//TestProperties.getWaitTime(), TimeUnit.SECONDS);
-            driver.manage().window().maximize();
+			try {
+				driver.manage().window().maximize();
+			}catch (ExceptionInInitializerError e) {
+			e.getCause();
+			}
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);//TestProperties.getWaitTime(), TimeUnit.SECONDS);
+
 			instances.put(name, driver);
 		} else {
 			driver = instances.get(name);
@@ -64,4 +69,5 @@ public class Driver {
 	public static void setDefaultWebDriverType(WebDriverTypes type) {
 		defaultDriverType = type;
 	}
+
 }
