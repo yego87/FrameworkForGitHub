@@ -29,12 +29,11 @@ public class GitHubLoginSteps {
 
         @Given("^user navigates to github home page$")
         public void navigate_to_home_page() {
-            driver.get(TestProperties.getTestProperty("login.url"));
+            driver.get(TestProperties.getTestProperty("main.url"));
         }
 
         @When("^click signIn button$")
         public void click_signIn() {
-            new MainPage().open();
             new MainPage().signIn();
         }
 
