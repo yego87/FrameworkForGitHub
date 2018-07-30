@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import com.epam.github.framework.core.ui.driver.Driver;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 
 import cucumber.api.CucumberOptions;
@@ -33,7 +34,7 @@ public class GitHubBddLoginTest extends AbstractTestNGCucumberTests {
         driver.manage().window().maximize();
     }
 
-    @AfterTest
+    @AfterMethod
     public void stopBrowser() {
         driver.quit();
     }
