@@ -118,8 +118,8 @@ public class GitHubTest extends BasicTestCase {
     }
 
     @AfterClass(description = "Close browser after tests execution")
-    public void shutDown(){
-        //;
+    public void shutDown() throws Exception {
+        Driver.killBrowser();
     }
 
 }

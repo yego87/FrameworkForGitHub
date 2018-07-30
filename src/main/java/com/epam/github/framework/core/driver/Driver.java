@@ -69,4 +69,7 @@ public class Driver {
 		defaultDriverType = type;
 	}
 
+	public static void killBrowser() throws Exception {
+		getWebDriverInstance().quit();
+	}
 }
