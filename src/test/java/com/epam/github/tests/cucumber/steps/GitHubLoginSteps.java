@@ -1,9 +1,9 @@
 package com.epam.github.tests.cucumber.steps;
 
-import com.epam.github.framework.core.ui.driver.Driver;
-import com.epam.github.framework.core.ui.pages.CreateRepositoryPage;
-import com.epam.github.framework.core.ui.pages.LoginPage;
-import com.epam.github.framework.core.ui.pages.MainPage;
+import com.epam.github.framework.core.driver.Driver;
+import com.epam.github.framework.ui.pages.CreateRepositoryPage;
+import com.epam.github.framework.ui.pages.LoginPage;
+import com.epam.github.framework.ui.pages.MainPage;
 import com.epam.github.framework.data.UserData;
 import com.epam.github.framework.utils.TestProperties;
 import cucumber.api.java.en.And;

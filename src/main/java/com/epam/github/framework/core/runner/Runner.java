@@ -2,10 +2,10 @@ package com.epam.github.framework.core.runner;
 
 import java.util.List;
 
-import com.epam.github.framework.common.config.Settings;
-import com.epam.github.framework.common.config.TestNgConfig;
-import com.epam.github.framework.core.ui.driver.Driver;
-import com.epam.github.framework.core.ui.driver.WebDriverTypes;
+import com.epam.github.framework.core.common.config.Settings;
+import com.epam.github.framework.core.common.config.TestNgConfig;
+import com.epam.github.framework.core.driver.Driver;
+import com.epam.github.framework.core.driver.WebDriverTypes;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.testng.TestNG;
@@ -33,7 +33,7 @@ public class Runner {
 		CmdLineParser parser = new CmdLineParser(settings);
 		try {
 			parser.parseArgument(args);
-			TestNgConfig.addTestngConfig(System.getenv("suite"));
+			//TestNgConfig.addTestngConfig(System.getenv("suite"));
 			Driver.setDefaultWebDriverType(WebDriverTypes.valueOf(System.getenv("driver")));
 
 		} catch (CmdLineException e) {

@@ -1,11 +1,11 @@
 package com.epam.github.tests;
 
-import com.epam.github.framework.core.ui.pages.*;
+import com.epam.github.framework.core.driver.Driver;
+import com.epam.github.framework.ui.pages.*;
 import com.epam.github.framework.data.UserData;
 import com.epam.github.framework.reports.ReportListener;
 import com.epam.github.framework.reports.TestListners;
 import com.epam.github.framework.reports.TestLogger;
-import com.epam.github.framework.utils.BaseDriver;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -119,7 +119,7 @@ public class GitHubTest extends BasicTestCase {
 
     @AfterClass(description = "Close browser after tests execution")
     public void shutDown(){
-        BaseDriver.closeWebBrowser();
+        //;
     }
 
 }

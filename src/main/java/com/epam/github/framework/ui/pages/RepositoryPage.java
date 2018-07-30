@@ -1,7 +1,7 @@
-package com.epam.github.framework.core.ui.pages;
+package com.epam.github.framework.ui.pages;
 
-import com.epam.github.framework.core.ui.elements.Decorator;
-import com.epam.github.framework.core.ui.elements.FileElement;
+import com.epam.github.framework.ui.elements.Decorator;
+import com.epam.github.framework.ui.elements.FileElement;
 import com.epam.github.framework.utils.TestProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

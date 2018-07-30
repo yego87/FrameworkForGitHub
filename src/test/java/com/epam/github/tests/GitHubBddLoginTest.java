@@ -2,7 +2,7 @@ package com.epam.github.tests;
 
 import java.util.concurrent.TimeUnit;
 
-import com.epam.github.framework.core.ui.driver.Driver;
+import com.epam.github.framework.core.driver.Driver;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 
 @CucumberOptions(strict = true, plugin = { "json:target/cucumber-report.json",
         "html:target/cucumber-report" }, tags = "@smokeTest", features = "src/test/resources/cucumber_features/github_basic.feature", glue = {
-        "com.epam.github.tests.cucumber.steps.GitHubLoginSteps" })
+        "com.epam.github.tests.cucumber.steps" })
 public class GitHubBddLoginTest extends AbstractTestNGCucumberTests {
 
     private static WebDriver driver;

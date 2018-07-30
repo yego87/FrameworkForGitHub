@@ -1,7 +1,6 @@
-package com.epam.github.framework.core.ui.pages;
+package com.epam.github.framework.ui.pages;
 
-import com.epam.github.framework.core.ui.driver.Driver;
-import com.epam.github.framework.utils.BaseDriver;
+import com.epam.github.framework.core.driver.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

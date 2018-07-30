@@ -1,4 +1,4 @@
-package com.epam.github.framework.core.ui.elements;
+package com.epam.github.framework.ui.elements;
 
 import org.openqa.selenium.*;
 

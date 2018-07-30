@@ -1,8 +1,7 @@
-package com.epam.github.framework.common.config;
+package com.epam.github.framework.core.common.config;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.kohsuke.args4j.Option;
 
 public class Settings {
 //	@Option(name = "--testng", usage = "Set path to testng.xml file", required = true)

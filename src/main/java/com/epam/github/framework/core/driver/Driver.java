@@ -1,15 +1,14 @@
-package com.epam.github.framework.core.ui.driver;
+package com.epam.github.framework.core.driver;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-import com.epam.github.framework.utils.TestProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import com.epam.github.framework.common.exception.UnknownDriverTypeException;
+import com.epam.github.framework.core.common.exception.UnknownDriverTypeException;
 
 
 public class Driver {

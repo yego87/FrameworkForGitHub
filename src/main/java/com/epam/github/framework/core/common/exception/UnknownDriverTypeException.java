@@ -1,4 +1,4 @@
-package com.epam.github.framework.common.exception;
+package com.epam.github.framework.core.common.exception;
 
 public class UnknownDriverTypeException extends RuntimeException {
 

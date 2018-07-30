@@ -1,4 +1,4 @@
-package com.epam.github.framework.core.ui.pages;
+package com.epam.github.framework.ui.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

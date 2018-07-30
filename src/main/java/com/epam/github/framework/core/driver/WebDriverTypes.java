@@ -1,4 +1,4 @@
-package com.epam.github.framework.core.ui.driver;
+package com.epam.github.framework.core.driver;
 
 public enum WebDriverTypes {
 

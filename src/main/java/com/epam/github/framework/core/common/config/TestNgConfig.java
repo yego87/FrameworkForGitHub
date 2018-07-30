@@ -1,4 +1,4 @@
-package com.epam.github.framework.common.config;
+package com.epam.github.framework.core.common.config;
 
 import java.util.ArrayList;
 import java.util.List;

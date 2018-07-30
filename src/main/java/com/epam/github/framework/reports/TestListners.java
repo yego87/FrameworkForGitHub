@@ -1,11 +1,5 @@
 package com.epam.github.framework.reports;
-import com.epam.github.framework.core.ui.driver.Driver;
-import com.epam.github.framework.core.ui.driver.WebDriverTypes;
 import com.epam.github.framework.utils.TestProperties;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -15,8 +9,6 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Field;
 
 public class TestListners implements ITestListener {
 

@@ -1,4 +1,4 @@
-package com.epam.github.framework.core.ui.pages;
+package com.epam.github.framework.ui.pages;
 
 
 import com.epam.github.framework.utils.TestProperties;
