@@ -1,3 +1,3 @@
 # FrameworkForGitHub
 For build and run tests in command line use command -
-`mvn clean install test`
+`mvn clean install test -Dsuite=testng`
