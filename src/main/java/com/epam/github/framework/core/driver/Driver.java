@@ -12,6 +12,7 @@ import com.epam.github.framework.core.common.exception.UnknownDriverTypeExceptio
 
 
 public class Driver {
+
 	private static final String DEFAULT_WEB_DRIVER = "DEFAULT_WEB_DRIVER";
 
 	private static WebDriverTypes defaultDriverType = WebDriverTypes.CHROME;

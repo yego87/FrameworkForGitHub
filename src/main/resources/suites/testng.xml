@@ -8,7 +8,7 @@
     <!--</test>-->
     <test name="GithubTestViaCucumberAndTestNG">
         <classes>
-            <class name="com.epam.github.tests.GitHubBddLoginTest" />
+            <class name="com.epam.github.tests.GitHubTest" />
         </classes>
     </test>
 </suite>

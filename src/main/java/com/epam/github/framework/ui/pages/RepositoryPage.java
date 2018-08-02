@@ -19,7 +19,7 @@ public class RepositoryPage extends BasePage {
 	@FindBy(xpath = "//strong[@itemprop='name']/a")
 	private WebElement repositoryNameLink;
     @FindBy(xpath = "//table[contains(@class,'files js-navigation-container js-active-navigation-container')]/tbody/tr[@class='js-navigation-item']//td[2]//span/a[contains(@href, '')]")
-            // "//table[contains()@class,'js-navigation-container')]/tbody[2]/tr[@class='js-navigation-item']tr//span/a[contains(text(), '')]")
+    // "//table[contains()@class,'js-navigation-container')]/tbody[2]/tr[@class='js-navigation-item']tr//span/a[contains(text(), '')]")
     private List<FileElement> files;
 
     public RepositoryPage() {

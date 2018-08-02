@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class FileElement extends Element {
 
-    @FindBy(xpath = "//span/relative-time")
+    @FindBy(xpath = ".//div[@id='last-commit']")
     private WebElement commit;
 //    @FindBy(xpath = ".//div[@id='last-commit']")
 //    private WebElement itemElement;
