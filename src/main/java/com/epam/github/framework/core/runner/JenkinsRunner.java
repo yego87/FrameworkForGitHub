@@ -1,4 +1,4 @@
-package com.epam.github.framework.utils;
+package com.epam.github.framework.core.runner;
 
 
 import com.epam.github.framework.core.driver.Driver;
@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PullRequestChecker {
+public class JenkinsRunner {
 
     private static PullsPage pullsPage = new PullsPage();
 
