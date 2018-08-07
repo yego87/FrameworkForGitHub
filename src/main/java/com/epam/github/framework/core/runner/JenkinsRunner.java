@@ -20,8 +20,6 @@ public class JenkinsRunner {
 
     public static void main(String[] args) throws Exception {
 
-        Configuration.browser = "chrome";
-
         try {
             if (BooleanUtils.isTrue(checkPullRequests())) {
                 pullsPage.openPullPageAndGetData();
