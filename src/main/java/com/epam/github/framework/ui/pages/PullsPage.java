@@ -1,23 +1,17 @@
 package com.epam.github.framework.ui.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.epam.github.framework.utils.TestProperties;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class PullsPage extends BasePage {
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.*;
 
-    @FindBy(xpath = "//li[contains(@id, 'issue')]")
-    private List<WebElement> requests;
+public class PullsPage {
 
-
-    /**
-     * Open create repository page
-     */
-    public void open() {
-        driver.get(TestProperties.getTestProperty("pull.request.url"));
-    }
+    private ElementsCollection requests = $$(byXpath("//div[@class ='border-right border-bottom border-left']//li//div/a"));
 
     /**
      * Check is new pull request was open
@@ -27,7 +21,25 @@ public class PullsPage extends BasePage {
         return !(requests == null);
     }
 
-//    public PullsPage() {
-//        PageFactory.initElements(new Decorator(driver), this);
-//    }
+    public PullsPage openPage() {
+        open(TestProperties.getTestProperty("pull.request.url"));
+
+        return new PullsPage();
+    }
+
+    public List openPullPageAndGetData() {
+
+        List parameters = new ArrayList<String>();
+
+        for (int i = 0; i < requests.size(); ++i) {
+            requests = $$(byXpath("//div[@class ='border-right border-bottom border-left']//li//div/a"));
+            requests.get(i).click();
+            PullPage pullPage = new PullPage();
+            pullPage.fetchGitUrlAndBranch();
+            back();
+        }
+
+        return parameters;
+    }
+
 }

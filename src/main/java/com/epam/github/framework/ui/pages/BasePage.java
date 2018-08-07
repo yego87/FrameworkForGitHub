@@ -30,6 +30,7 @@ public abstract class BasePage {
     protected WebDriverWait webDriverWait;
 
     protected BasePage() {
+
         try {
             driver = Driver.getWebDriverInstance();
         } catch (Exception e) {

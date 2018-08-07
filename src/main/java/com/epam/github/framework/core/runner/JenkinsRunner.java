@@ -1,7 +1,9 @@
 package com.epam.github.framework.core.runner;
 
 
+import com.codeborne.selenide.Configuration;
 import com.epam.github.framework.core.driver.Driver;
+import com.epam.github.framework.data.PullsData;
 import com.epam.github.framework.ui.pages.PullsPage;
 import org.apache.commons.lang3.BooleanUtils;
 
@@ -17,11 +19,18 @@ public class JenkinsRunner {
     private static PullsPage pullsPage = new PullsPage();
 
     public static void main(String[] args) throws Exception {
+
+        Configuration.browser = "chrome";
+
         try {
             if (BooleanUtils.isTrue(checkPullRequests())) {
-                runJob();
+                pullsPage.openPullPageAndGetData();
+                for (int i = 0; i < PullsData.getUrlList().size(); ++i) {
+                    runJob(PullsData.getUrlList().get(i), PullsData.getBranch().get(i));
+                }
+                System.out.println("There is new Pull Request! Job start!");
             } else {
-                System.out.println("There is now new Pull Request!");
+                System.out.println("There is no new Pull Request!");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,13 +40,17 @@ public class JenkinsRunner {
     }
 
     private static Boolean checkPullRequests() {
-        pullsPage.open();
+        pullsPage.openPage();
         return pullsPage.isNewRequestHave();
     }
 
-    private static void runJob() {
+    private static void runJob(String name, String branch) {
         try {
-            URL url = new URL ("http://epbyminw1347:8080/job/GitHubTests/build");
+            URL url = new URL ("http://epbyminw1347:8080/job/GitHubTests/buildWithParameters?git_url=https://github.com/"
+                    + name +"/FrameworkForGitHub.git&branch="
+                    + branch
+            );
+
             String user = "yegor_veselov";
             String pass = "11e2df3cc4ce2db63a8b8a48150cadc1";
             String authStr = user +":"+  pass;

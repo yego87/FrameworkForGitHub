@@ -3,6 +3,9 @@ package com.epam.github.framework.core.driver;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
