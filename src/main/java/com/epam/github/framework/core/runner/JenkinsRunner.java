@@ -1,10 +1,10 @@
 package com.epam.github.framework.core.runner;
 
-
-import com.codeborne.selenide.Configuration;
 import com.epam.github.framework.core.driver.Driver;
 import com.epam.github.framework.data.PullsData;
 import com.epam.github.framework.ui.pages.PullsPage;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.apache.commons.lang3.BooleanUtils;
 
 import javax.xml.bind.DatatypeConverter;
@@ -13,20 +13,22 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JenkinsRunner {
 
     private static PullsPage pullsPage = new PullsPage();
+    private static List<Object> body = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
-
         try {
-            if (BooleanUtils.isTrue(checkPullRequests())) {
+            if (BooleanUtils.isTrue(checkPullRequestsFromUi() == checkPullRequestsFromAPI())) {
                 pullsPage.openPullPageAndGetData();
                 for (int i = 0; i < PullsData.getUrlList().size(); ++i) {
                     runJob(PullsData.getUrlList().get(i), PullsData.getBranch().get(i));
                 }
-                System.out.println("There is new Pull Request! Job start!");
+                    System.out.println("There is new Pull Request! Job start!");
             } else {
                 System.out.println("There is no new Pull Request!");
             }
@@ -37,9 +39,19 @@ public class JenkinsRunner {
         }
     }
 
-    private static Boolean checkPullRequests() {
+    private static boolean checkPullRequestsFromUi() {
         pullsPage.openPage();
         return pullsPage.isNewRequestHave();
+    }
+
+    private static boolean checkPullRequestsFromAPI() {
+        Response response = RestAssured.get("https://api.github.com/repos/yego87/FrameworkForGitHub/pulls");
+        body = response.jsonPath().getList("url");
+        return !body.isEmpty();
+    }
+
+    private static int count() {
+        return body.size();
     }
 
     private static void runJob(String name, String branch) {
